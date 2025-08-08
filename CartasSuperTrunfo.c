@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h> 
 
 // Desafio Super Trunfo - Países
 // Tema 1 - Cadastro das Cartas
@@ -9,8 +10,10 @@
 int main() {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
-    char estado1, estado2, codigo1[5], codigo2[5], nome1[20], nome2[20];
-    int pop1, pop2, num1, num2;
+    char estado1, estado2;
+    char codigo1[5], codigo2[5], nome1[50], nome2[50];
+    int pop1, pop2, num1, num2, c;
+    int n =50;
     float area1, area2, pib1,pib2;
 
  
@@ -19,13 +22,14 @@ int main() {
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
     
     printf("Digite o estado da carta 1: \n");
-    scanf("%s", &estado1);
+    scanf("%c", &estado1);
 
     printf("Digite o código da cidade da carta 1: \n");
-    scanf("%s", &codigo1);
+    scanf("%s", codigo1);
     
     printf("Digite o nome da cidade da carta 1: \n");
-    scanf("%s", &nome1);
+    ((c = getchar()) != '\n' && c !=EOF);
+    fgets ( nome1, n, stdin);
 
     printf("Digite a população da cidade da carta 1: \n");
     scanf("%d", &pop1);
@@ -40,13 +44,14 @@ int main() {
     scanf("%f", &pib1);
 
     printf("Digite o estado da carta 2: \n");
-    scanf("%s", &estado2);
+    scanf("%c", &estado2);
 
     printf("Digite o código da cidade da carta 2: \n");
-    scanf("%s", &codigo2);
+    scanf("%s", codigo2);
     
     printf("Digite o nome da cidade da carta 2: \n");
-    scanf("%s", &nome2);
+    ((c = getchar()) != '\n' && c !=EOF);
+    fgets ( nome2, n, stdin);
 
     printf("Digite a população da cidade da carta 2: \n");
     scanf("%d", &pop2);
@@ -60,12 +65,27 @@ int main() {
     printf("Digite o PIB da cidade da carta 2: \n");
     scanf("%f", &pib2);
 
-
-
-
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+
+    printf("\n --- Dados da Carta 1 --- \n");
+    printf("Estado: %c\n", estado1);
+    printf("Código: %s\n", codigo1);
+    printf("Cidade: %s\n", nome1);
+    printf("População: %d\n", pop1);
+    printf("Área: %.2f\n", area1);
+    printf("PIB: %.2f\n", pib1);
+    printf("Pontos Turísticos: %d\n", num1);
+
+    printf("\n --- Dados da Carta 2 --- \n");
+    printf("Estado: %c\n", estado2);
+    printf("Código: %s\n", codigo2);
+    printf("Cidade: %s\n", nome2);
+    printf("População: %d\n", pop2);
+    printf("Área: %.2f\n", area2);
+    printf("PIB: %.2f\n", pib2);
+    printf("Pontos Turísticos: %d\n", num2);
 
     return 0;
 }
