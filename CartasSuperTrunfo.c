@@ -12,8 +12,8 @@ int main() {
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
     char estado1, estado2;
     char codigo1[5], codigo2[5], nome1[50], nome2[50];
-    int pop1, pop2, num1, num2, c;
-    int n =50;
+    int num1, num2, c;
+    unsigned long int pop1, pop2;
     float area1, area2, pib1,pib2;
 
  
@@ -22,17 +22,17 @@ int main() {
     // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
     
     printf("Digite o estado da carta 1: \n");
-    scanf("%c", &estado1);
+    scanf(" %c", &estado1);
 
     printf("Digite o código da cidade da carta 1: \n");
     scanf("%s", codigo1);
     
     printf("Digite o nome da cidade da carta 1: \n");
     ((c = getchar()) != '\n' && c !=EOF);
-    fgets ( nome1, n, stdin);
+    fgets ( nome1, sizeof (nome2), stdin);
 
     printf("Digite a população da cidade da carta 1: \n");
-    scanf("%d", &pop1);
+    scanf("%lu", &pop1);
 
     printf("Digite o número de pontos turísticos da cidade da carta 1: \n");
     scanf("%d", &num1);
@@ -44,17 +44,17 @@ int main() {
     scanf("%f", &pib1);
 
     printf("Digite o estado da carta 2: \n");
-    scanf("%c", &estado2);
+    scanf(" %c", &estado2);
 
     printf("Digite o código da cidade da carta 2: \n");
     scanf("%s", codigo2);
     
     printf("Digite o nome da cidade da carta 2: \n");
     ((c = getchar()) != '\n' && c !=EOF);
-    fgets ( nome2, n, stdin);
+    fgets ( nome2, sizeof (nome2), stdin);
 
     printf("Digite a população da cidade da carta 2: \n");
-    scanf("%d", &pop2);
+    scanf("%lu", &pop2);
 
     printf("Digite o número de pontos turísticos da cidade da carta 2: \n");
     scanf("%d", &num2);
@@ -70,22 +70,22 @@ int main() {
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
 
     printf("\n --- Dados da Carta 1 --- \n");
-    printf("Estado: %c\n", estado1);
+    printf("\nEstado: %c\n", estado1);
     printf("Código: %s\n", codigo1);
-    printf("Cidade: %s\n", nome1);
-    printf("População: %d\n", pop1);
-    printf("Área: %.2f\n", area1);
-    printf("PIB: %.2f\n", pib1);
-    printf("Pontos Turísticos: %d\n", num1);
+    printf("Nome da Cidade: %s", nome1);
+    printf("População: %lu habitantes\n", pop1);
+    printf("Área: %.2f km²\n", area1);
+    printf("PIB: %.2f bilhões de reais\n", pib1);
+    printf("Número de Pontos Turísticos: %d\n", num1);
 
     printf("\n --- Dados da Carta 2 --- \n");
-    printf("Estado: %c\n", estado2);
+    printf("\nEstado: %c\n", estado2);
     printf("Código: %s\n", codigo2);
-    printf("Cidade: %s\n", nome2);
-    printf("População: %d\n", pop2);
-    printf("Área: %.2f\n", area2);
-    printf("PIB: %.2f\n", pib2);
-    printf("Pontos Turísticos: %d\n", num2);
+    printf("Nome da Cidade: %s", nome2);
+    printf("População: %lu habitantes\n", pop2);
+    printf("Área: %.2f km²\n", area2);
+    printf("PIB: %.2f bilhões de reais\n", pib2);
+    printf("Número de Pontos Turísticos: %d\n\n", num2);
 
     return 0;
 }
