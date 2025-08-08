@@ -25,11 +25,11 @@ int main() {
     scanf(" %c", &estado1);
 
     printf("Digite o código da cidade da carta 1: \n");
-    scanf("%s", codigo1);
+    scanf(" %4s", codigo1);
     
     printf("Digite o nome da cidade da carta 1: \n");
     ((c = getchar()) != '\n' && c !=EOF);
-    fgets ( nome1, sizeof (nome2), stdin);
+    fgets ( nome1, sizeof (nome1), stdin);
 
     printf("Digite a população da cidade da carta 1: \n");
     scanf("%lu", &pop1);
@@ -47,7 +47,7 @@ int main() {
     scanf(" %c", &estado2);
 
     printf("Digite o código da cidade da carta 2: \n");
-    scanf("%s", codigo2);
+    scanf(" %4s", codigo2);
     
     printf("Digite o nome da cidade da carta 2: \n");
     ((c = getchar()) != '\n' && c !=EOF);
